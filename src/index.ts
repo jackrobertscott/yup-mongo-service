@@ -195,7 +195,7 @@ export function createYupMongoCore<T extends { id: string }>(
      * @returns The validated data.
      */
     async getValidatedData(data: any): Promise<any> {
-      return yupSchema.validate(data, {
+      return this.getSchemaWithoutId().validate(data, {
         abortEarly: false,
         stripUnknown: true,
         strict: true,
