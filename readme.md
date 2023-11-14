@@ -5,7 +5,7 @@
 ## Install
 
 ```sh
-npm install yup-mongo-service
+npm install yup mongodb yup-mongo-service
 ```
 
 ## Usage
