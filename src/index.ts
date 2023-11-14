@@ -195,16 +195,11 @@ export function createYupMongoCore<T extends { id: string }>(
      * @returns The validated data.
      */
     async getValidatedData(data: any): Promise<any> {
-      try {
-        return await yupSchema.validate(data, {
-          abortEarly: false,
-          stripUnknown: true,
-          strict: true,
-        })
-      } catch (error) {
-        const message = error instanceof Error ? error.message : "Unknown"
-        throw new Error(`Validation error: ${message}`)
-      }
+      return yupSchema.validate(data, {
+        abortEarly: false,
+        stripUnknown: true,
+        strict: true,
+      })
     },
 
     /**
