@@ -1,6 +1,11 @@
 import { Collection, Document, Filter, ObjectId, SortDirection } from "mongodb"
 import * as yup from "yup"
 
+export type YupMongoService<
+  T extends { id: string },
+  X extends Record<string, Function>
+> = ReturnType<typeof createYupMongoService<T, X>>
+
 /**
  * Creates a service with MongoDB integration and Yup validation.
  * @param options - Configuration options for the service.
@@ -18,6 +23,10 @@ export function createYupMongoService<
   const data = options.extend(core)
   return { ...core, ...data }
 }
+
+export type YupMongoCore<T extends { id: string }> = ReturnType<
+  typeof createYupMongoCore<T>
+>
 
 /**
  * Core factory function for creating MongoDB services with Yup validation.
