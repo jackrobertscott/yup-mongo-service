@@ -2,7 +2,7 @@
   "name": "yup-mongo-service",
   "description": "A wrapper around mongodb drivers to enable data validation with yup.",
   "author": "Jack Scott",
-  "version": "0.4.0",
+  "version": "0.4.5",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

@@ -21,7 +21,7 @@ export function createYupMongoService<
 }) {
   const core = createYupMongoCore<T>(options.schema, options.collection)
   const data = options.extend(core)
-  return { ...core, ...data }
+  return { ...core, ...data } as Omit<typeof core, keyof X> & X
 }
 
 export type YupMongoCore<T extends { id: string }> = ReturnType<
